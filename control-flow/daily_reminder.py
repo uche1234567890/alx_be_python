@@ -1,6 +1,7 @@
-task = input("Enter your daily task: ")
-priority = input("Enter the priority (high/medium/low): ").strip().lower()
-time_bound = input("Enter the time bound (yes/no): ").strip().lower()
+# Prompt for a Single Task
+task = input("Enter your task: ")
+priority = input("Priority (high/medium/low): ").lower()
+time_bound = input("Is it time-bound? (yes/no): ").lower()
 
 match priority:
     case "high":
