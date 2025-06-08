@@ -6,6 +6,7 @@ def display_menu():
     print("4. Exit")
 
 def main():
+    print("Shopping List Manager")
     shopping_list = []
 
     while True:
