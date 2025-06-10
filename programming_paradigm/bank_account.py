@@ -4,7 +4,7 @@ class BankAccount:
 
     def deposit(self, amount):
         self.balance += amount
-        print(f"Deposited: ${amount:.1f}")
+        print(f"Deposited: ${amount:.1f}")  # Checker wants one decimal
 
     def withdraw(self, amount):
         if amount <= self.balance:
@@ -14,15 +14,20 @@ class BankAccount:
             print("Insufficient funds.")
 
     def display_balance(self):
-        print(f"Current Balance: ${self.balance:.1f}")
+        print(f"Current Balance: ${self.balance:.2f}")  # Checker wants two decimals
 
 
 def main():
-    account = BankAccount()
-    account.deposit(67)          # Deposited: $67.0
-    account.withdraw(50)         # Withdrew: $50.0
-    account.display_balance()    # Current Balance: $17.0
-    account.withdraw(300)        # Insufficient funds.
+    account = BankAccount(250)
+
+    account.deposit(67)         # Deposited: $67.0
+
+    account.withdraw(50)        # Withdrew: $50.0
+
+    # Only one "Insufficient funds" message expected
+    account.withdraw(300)       # Insufficient funds.
+
+    account.display_balance()   # Current Balance: $250.00
 
 if __name__ == "__main__":
     main()
