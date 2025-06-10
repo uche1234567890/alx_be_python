@@ -11,3 +11,12 @@ def safe_divide(numerator, denominator):
 
     except ValueError:
         return "Error: Please enter numeric values only."
+
+
+# Example usage
+result = safe_divide(73, 5)
+
+if isinstance(result, float):
+    print(f"The result of the division is {result}")
+else:
+    print(result)
