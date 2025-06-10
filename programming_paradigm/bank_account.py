@@ -4,45 +4,27 @@ class BankAccount:
 
     def deposit(self, amount):
         self.balance += amount
-        print(f"Deposited: {amount}")
-        self.display_balance()
+        print(f"Deposited: ${amount:.2f}")
 
     def withdraw(self, amount):
         if amount <= self.balance:
             self.balance -= amount
-            print(f"Withdrawn: {amount}")
+            print(f"Withdrew: ${amount:.2f}")
         else:
-            print("Insufficient funds")
-        self.display_balance()
+            print("Insufficient funds.")
 
     def display_balance(self):
-        print(f"Current Balance: {self.balance}")
+        print(f"Current Balance: ${self.balance:.2f}")
 
 
 def main():
     account = BankAccount()
 
-    while True:
-        print("\nChoose an option:")
-        print("1. Deposit")
-        print("2. Withdraw")
-        print("3. Check Balance")
-        print("4. Exit")
-        choice = input("Enter your choice (1–4): ").strip()
-
-        if choice == '1':
-            amount = float(input("Enter amount to deposit: "))
-            account.deposit(amount)
-        elif choice == '2':
-            amount = float(input("Enter amount to withdraw: "))
-            account.withdraw(amount)
-        elif choice == '3':
-            account.display_balance()
-        elif choice == '4':
-            print("Thank you for banking with us!")
-            break
-        else:
-            print("Invalid choice. Please try again.")
+    # Example usage – replace or remove these for actual tests or input
+    account.deposit(67)          # Deposited: $67.00
+    account.withdraw(50)         # Withdrew: $50.00
+    account.display_balance()    # Current Balance: $17.00
+    account.withdraw(300)        # Insufficient funds.
 
 if __name__ == "__main__":
     main()
